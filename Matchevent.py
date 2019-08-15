@@ -3,8 +3,8 @@ from time import strftime, localtime
 def write_line(file_name, line):
 	with open(file_name, "a+") as f:
 		f.write(line)
-		
-def match_update(score, min, event):
+
+def match_update(score, minute, event):
 	h, hs, v, vs = (score)
 	current_score = f"{h} {hs} {v} {vs}"
 	time = strftime("%I:%M %p", localtime())
@@ -13,9 +13,15 @@ def match_update(score, min, event):
 	file_name = f"{date}.{h}{v}.txt"
 	write_line(file_name, match_line)
 
+def score():
+	home_team = "MUN"
+	home_score = 1
+	away_team = "CHE"
+	away_score = 0
+	current_score = [home_team, home_score, away_team, away_score]
+	return current_score
 
-score = ['MUN', '0', 'CHE', '0']
-min = '01'
-event = "We're underway, no score, no red cards yet'"
+minute = '24'
+event = "Rashford finishes the penalty"
 
-match_update(score, min, event)
+match_update(score(), minute, event)
