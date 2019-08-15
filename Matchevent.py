@@ -14,9 +14,9 @@ def write_line(file_name, line):
 		f.write(line)
 
 def score():
-	home_team = "MUN"
+	home_team = "MUN" #Home team in TV caps, used in file name
 	home_score = 1
-	away_team = "CHE"
+	away_team = "CHE" #Away team in TV caps, used in file name
 	away_score = 0
 	current_score = [home_team, home_score, away_team, away_score]
 	return current_score
