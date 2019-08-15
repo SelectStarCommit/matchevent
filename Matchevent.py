@@ -10,7 +10,7 @@ def match_update(score, min, event):
 	time = strftime("%I:%M %p", localtime())
 	date = strftime("%Y%m%d", localtime())
 	match_line = f"{time} | {current_score} | {min}\': {event}\n"
-	file_name = str(date + h + v + '.txt')
+	file_name = f"{date}.{h}{v}.txt"
 	write_line(file_name, match_line)
 
 
