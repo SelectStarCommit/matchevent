@@ -1,17 +1,17 @@
 from time import strftime, localtime
 
+def match_update(score, minute, event):
+	ht, hts, at, ats = (score)
+	current_score = f"{ht} {hts} {at} {ats}"
+	time = strftime("%I:%M %p", localtime())
+	date = strftime("%Y%m%d", localtime())
+	match_line = f"{time} | {current_score} | {minute}\': {event}\n"
+	file_name = f"{date}.{ht}{at}.txt"
+	write_line(file_name, match_line)
+
 def write_line(file_name, line):
 	with open(file_name, "a+") as f:
 		f.write(line)
-
-def match_update(score, minute, event):
-	h, hs, v, vs = (score)
-	current_score = f"{h} {hs} {v} {vs}"
-	time = strftime("%I:%M %p", localtime())
-	date = strftime("%Y%m%d", localtime())
-	match_line = f"{time} | {current_score} | {min}\': {event}\n"
-	file_name = f"{date}.{h}{v}.txt"
-	write_line(file_name, match_line)
 
 def score():
 	home_team = "MUN"
